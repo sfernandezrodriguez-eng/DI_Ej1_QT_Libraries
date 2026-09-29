@@ -18,7 +18,7 @@ class CaixaCor(QWidget):
 class Ventanas(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Calculadora del amor de Gabriela por Casal")
+        self.setWindowTitle("Calculadora")
         self.setMinimumSize(400, 600)
         self.setMaximumSize(400, 400)
 
