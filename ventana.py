@@ -3,12 +3,14 @@ from PyQt6.QtWidgets import (
     QApplication,
     QCheckBox,
     QComboBox,
+    QFormLayout,
     QGridLayout,
     QLabel,
     QLineEdit,
     QMainWindow,
     QRadioButton,
     QStackedLayout,
+    QTimeEdit,
     QVBoxLayout,
     QWidget,
 )
@@ -98,8 +100,16 @@ class FiestraPrincipal(QMainWindow):
 
         # --- 3. PANEL PAS (Índice 3 en tarxetas) ---
         panelPAS = QWidget()
-        layoutPAS = QVBoxLayout()
-        layoutPAS.addWidget(QLabel("Panel de PAS"))
+        layoutPAS = QFormLayout()
+        txtOcupacion = QLineEdit()
+        txtOcupacion.setPlaceholderText("Introduce la ocupación")
+        hora = QTimeEdit()
+        hora.setDisplayFormat("HH:mm")
+        horaSalida = QTimeEdit()
+        horaSalida.setDisplayFormat("HH:mm")
+        layoutPAS.addRow("Ocupación:", txtOcupacion)
+        layoutPAS.addRow("Hora:", hora)
+        layoutPAS.addRow("Hora de salida:", horaSalida)
         panelPAS.setLayout(layoutPAS)
 
         # Añadimos los paneles en orden
